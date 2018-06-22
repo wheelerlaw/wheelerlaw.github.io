@@ -1,0 +1,29 @@
+language: ruby
+rvm: 2.2.5
+sudo: false
+dist: trusty
+branches:
+  only:
+  - develop
+env:
+  secure: N59H7JGB+h3uOKiWLz22UM9rrPaGNs479PX/tBzbErK+aLOQcHVr6vbcEbu+xH8zsjg5iiwMN+ekWUoak0TgDjK4dNkbvBnUIFPf7W1xTCxpcOwuhJfIZYTKIbwFMzTEnckjtnE+frfmNkrw8XCzM50WnpiGYxUKqxUpNyCG0LmtmiCoQ0u8D7UqKfyDy6CiDYB7a7lhv5X49OWhV0dKlpnV7r+soH68UIybX8qvvfgv3L6U+J/AbsJFPoge4mm2vxFlgzz4IWA94ZR2PxZbyGISpDnVSU+s62jW8+03UzXQQv24FnI7iK02MqoykD4sBsxQuOun/Wl4//FfEE/UkaQXvEW6e7UJJT7q/0N20C7VpGKq5jqgrDTnNomKdfv826Iok3bFFC/FUPjv791cGJNByRi+ttiU2zuXK1dJeyB0h9574Rj6DpZnT3RP2xJ5x1Yc4EPB8seUhCVMQ/WkWk6zRlAbQZM6TmLXxs3iEWWo15wpieoDTGIDl0DVNohUsLacrBTbsjgZWfSoC871liL9UvD9jL/4HUawlcYQUgMpn0OAHyyTF5OxgPAGBvpB56Dp3lfsosKZZxHYYAYENOuTR0FqMvwRRG3usr33RMH4rc6LSSBU/dsbQKOIFGkfUlvLS407lOwfm4UhgYuCP1TwOUPazM+bEfq0PXr6Ck4=
+install: gem install jekyll jekyll-paginate rake
+script: rake
+deploy:
+  provider: pages
+  local-dir: _site
+  target-branch: master
+  skip-cleanup: true
+  github-token: "$GITHUB_TOKEN"
+  keep-history: true
+  verbose: true
+  on:
+    branch:
+    - develop
+#notifications:
+#  email: false
+#  slack:
+#    on_success: always
+#    on_pull_requests: false
+#    rooms:
+#      secure: bQ+JQApoxyRzSBl6SE1KCFkDmncV6o5FMMSBAeGIrW/Nx2g1HIokrYP1DNNwmd0IeWEUbJaGxqqYQ6EKfqyVv+lb8SqVCbfiGSlJcsa3VCM8qcvLbgqgUiVIcX6I7zlU1L6XW2p1NqTuP67Tc3Hicn5oFUb7ijjb4BsvQrRCIl8=

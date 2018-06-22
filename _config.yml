@@ -1,0 +1,27 @@
+# Site settings
+title: wlaw | steeleco
+
+description: your mind lay yonder, reach further and achieve what was thought not possible
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://steele.co" # the base hostname & protocol for your site
+
+permalink: /blog/:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+
+paginate: 5
+plugins: [jekyll-paginate]
+exclude:
+ - package.json
+ - README.md
+ - LICENSE.md
+ - node_modules
+ - scripts
+ - .travis.yml
+ - Rakefile
+
+collections:
+  projects:
+    output: true
+version: 0.1
